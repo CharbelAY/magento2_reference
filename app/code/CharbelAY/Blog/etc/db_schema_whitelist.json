@@ -1,0 +1,15 @@
+{
+    "charbelay_blog_posts": {
+        "column": {
+            "id": true,
+            "title": true,
+            "content": true,
+            "created_at": true,
+            "update_at": true,
+            "is_active": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
