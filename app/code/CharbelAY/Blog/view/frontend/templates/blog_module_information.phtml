@@ -1,6 +1,21 @@
+<?php
+
+/** @var Magento\Framework\View\Element\Template $block */
+/** @var CharbelAY\Blog\ViewModel\Posts $posts_vm */
+/** @var Magento\Framework\Escaper  $escaper */
+$posts_vm = $block->getData('posts_view_model');
+
+?>
+
 <div>
     <h1 class="blog_module_information_header">
         Welcome to the blog module information page
     </h1>
     <a href="/blog/oldRoute/list">Please click here to go to the blog list</a>
 </div>
+
+<?php foreach ($posts_vm->getPosts() as $post): ?>
+    <div>
+        <?= $escaper->escapeHtml($post->getData('title'), ['p', 'em']) ?>
+    </div>
+<?php endforeach ?>

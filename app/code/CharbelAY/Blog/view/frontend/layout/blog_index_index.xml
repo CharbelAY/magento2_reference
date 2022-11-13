@@ -8,7 +8,11 @@
 <page layout="blog_module_information_layout" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="root">
-            <block name="blog_information" template="CharbelAY_Blog::blog_module_information.phtml"/>
+            <block name="blog_information" template="CharbelAY_Blog::blog_module_information.phtml">
+                <arguments>
+                    <argument name="posts_view_model" xsi:type="object">CharbelAY\Blog\ViewModel\Posts</argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>

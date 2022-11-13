@@ -10,6 +10,10 @@ use CharbelAY\Blog\Api\PostRepositoryInterface;
 use CharbelAY\Blog\Model\ResourceModel\Post as PostResourceModel;
 use Magento\Framework\Exception\NoSuchEntityException;
 
+/**
+ * Class PostRepository
+ * @package CharbelAY\Blog\Model
+ */
 class PostRepository implements PostRepositoryInterface
 {
 
@@ -25,6 +29,11 @@ class PostRepository implements PostRepositoryInterface
         $this->postResourceModel = $postResourceModel;
     }
 
+    /**
+     * @param PostInterface $post
+     * @return PostInterface
+     * @throws \Magento\Framework\Exception\AlreadyExistsException
+     */
     public function save(PostInterface $post): PostInterface
     {
         $this->postResourceModel->save($post);
@@ -32,6 +41,11 @@ class PostRepository implements PostRepositoryInterface
         return $post;
     }
 
+    /**
+     * @param int $id
+     * @return PostInterface
+     * @throws NoSuchEntityException
+     */
     public function getById(int $id): PostInterface
     {
         $post = $this->postFactory->create();
@@ -44,8 +58,14 @@ class PostRepository implements PostRepositoryInterface
         return $post;
     }
 
+    /**
+     * @param int $id
+     * @return bool
+     * @throws NoSuchEntityException
+     */
     public function deleteById(int $id): bool
     {
-        // TODO: Implement deleteById() method.
+        $model = $this->getById($id);
+        $this->postResourceModel->delete($model);
     }
 }

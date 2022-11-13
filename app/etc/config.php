@@ -345,6 +345,7 @@ return [
         'Magento_WishlistGraphQl' => 1,
         'Magento_WishlistSampleData' => 1,
         'CharbelAY_Blog' => 1,
+        'CharbelAY_PromoHeader' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
         'Temando_ShippingRemover' => 1

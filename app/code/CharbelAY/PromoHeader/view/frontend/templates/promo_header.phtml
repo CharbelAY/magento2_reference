@@ -1,0 +1,17 @@
+<?php
+
+/** @var $block Magento\Framework\View\Element\Template */
+
+?>
+
+<div id="promo-header-container" data-bind="scope: 'promo-header-container'">
+    <!-- ko template: getTemplate() --> <!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "#promo-header-container": {
+            "Magento_Ui/js/core/app": <?= $block->getJsLayout(); ?>
+        }
+    }
+</script>
