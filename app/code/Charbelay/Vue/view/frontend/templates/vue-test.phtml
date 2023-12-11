@@ -1,0 +1,32 @@
+<style>
+    [v-cloak] {
+        display: none;
+    }
+</style>
+
+<div v-cloak id="vue-test">
+    <h1>{{ message }}</h1>
+    <button-simple></button-simple>
+    </div>
+</div>
+
+<script type="module">
+    require([
+        "Charbelay_Vue/js/button/button"
+    ], function(button) {
+        debugger;
+
+        const { createApp } = Vue;
+
+        const app = createApp({
+            data() {
+                return {
+                    message: 'Hello Vue!',
+                }
+            },
+        });
+
+        app.component('button-simple', button)
+        app.mount('#vue-test')
+    });
+</script>
